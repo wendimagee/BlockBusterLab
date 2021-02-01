@@ -44,5 +44,12 @@ namespace BlockBusterLab
                 return output;
                 
             }
+            public void PrintScenes(List<string> Scenes)
+            {
+                foreach (string s in Scenes)
+                {
+                Console.WriteLine($"    {Scenes.IndexOf(s) + 1}. {s}");
+                }
+            }
         }
     }

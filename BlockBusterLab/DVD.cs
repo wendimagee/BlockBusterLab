@@ -16,8 +16,17 @@ namespace BlockBusterLab
         public void Play()
         {
             Console.WriteLine("What scene would you like to watch?");
-            string sceneChoice = Console.ReadLine().ToLower().Trim();
-            //Console.WriteLine(Scenes[sceneChoice]);
+            PrintScenes(Scenes);
+            Console.WriteLine("Which scene would you like to watch?");
+            string input = Console.ReadLine();
+            int userChoice = Int32.Parse(input) - 1;
+            //check if userchoice is in index
+            //if (userChoice > Scenes.Count || userChoice < 0)
+            //{
+            //    throw new IndexOutOfRangeException();
+            //}
+            Console.WriteLine(Scenes[userChoice]);
+
         }
     }
 }
