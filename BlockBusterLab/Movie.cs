@@ -7,6 +7,7 @@ namespace BlockBusterLab
     public enum Genre
     {
         Comedy,
+        Drama,
         Horror,
         Romance,
         Action,

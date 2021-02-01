@@ -8,7 +8,12 @@ namespace BlockBusterLab
     {
         public VHS(string Title, int RunTime, Genre Category, List<string> Scenes, int CurrentTime) : base(Title, RunTime, Category, Scenes)
         {
-            
+            CurrentTime = 0;
+            this.Title = Title;
+            this.RunTime = RunTime;
+            this.Category = Category;
+            this.Scenes = Scenes;
+            this.CurrentTime = 0;
         }
 
         public void Rewind(int currentTime)
