@@ -6,7 +6,12 @@ namespace BlockBusterLab
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Welcome to GC Blockbuster!\n");
+            Console.WriteLine("Please select a movie from the list\n");
+            // call CheckOut()
+           // Console.WriteLine("Which movie would you like to watch?");
+            // string movieChoice = Console.ReadLine().ToLower().Trim();
+
         }
     }
 }

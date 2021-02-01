@@ -9,7 +9,6 @@ namespace BlockBusterLab
         Comedy,
         Horror,
         Romance,
-        Kids,
         Action,
         Indie,
         Adventure,
@@ -33,16 +32,17 @@ namespace BlockBusterLab
                 this.Scenes = Scenes;
             }
 
-            public override string PrintInfo(List<Movie> movies)
+            public string PrintInfo(List<Movie> movies)
             {
-                foreach(Movie m in movies)
+            string output = "";
+            foreach (Movie m in movies)
             {
-                string output = "";
                 output += $"Title: {Title}\n";
                 output += $"Run Time: {RunTime} Minutes\n";
                 output += $"Genre: {Category}\n";
-                return output;
             }
+                return output;
+                
             }
         }
     }
