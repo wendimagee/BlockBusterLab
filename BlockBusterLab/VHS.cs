@@ -6,14 +6,14 @@ namespace BlockBusterLab
 {
     class VHS: Movie
     {
-        public VHS(string Title, int RunTime, Genre Category, List<string> Scenes, int CurrentTime) : base(Title, RunTime, Category, Scenes)
+        int currentTime = 0;
+        public VHS(string Title, int RunTime, Genre Category, List<string> Scenes, int currentTime) : base(Title, RunTime, Category, Scenes)
         {
-            CurrentTime = 0;
             this.Title = Title;
             this.RunTime = RunTime;
             this.Category = Category;
             this.Scenes = Scenes;
-            this.CurrentTime = 0;
+            this.currentTime = currentTime;
         }
 
         public void Rewind(int currentTime)
