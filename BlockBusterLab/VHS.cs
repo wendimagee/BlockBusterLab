@@ -4,26 +4,41 @@ using System.Text;
 
 namespace BlockBusterLab
 {
-    class VHS: Movie
+    class VHS : Movie
     {
-        int currentTime = 0;
-        public VHS(string Title, int RunTime, Genre Category, List<string> Scenes, int currentTime) : base(Title, RunTime, Category, Scenes)
+        public int CurrentTime { get; set; }
+        public VHS(string Title, int RunTime, Genre Category, List<string> Scenes, int currentTime=0) : base(Title, RunTime, Category, Scenes)
         {
-            this.Title = Title;
-            this.RunTime = RunTime;
-            this.Category = Category;
-            this.Scenes = Scenes;
-            this.currentTime = currentTime;
+            this.CurrentTime = currentTime;
         }
 
-        public void Rewind(int currentTime)
+        public static void Rewind(int currentTime)
         {
             currentTime = 0;
         }
-        public void Play(int CurrentTime)
+        public override void Play()
         {
             Console.WriteLine(Scenes[CurrentTime]);
-            CurrentTime++;
+            if (CurrentTime < Scenes.Count + 1)
+            {
+                CurrentTime++;
+            }
+            else
+            {
+                Console.WriteLine("Tape must be rewound before you can watch. Rewind now? (y/n)");
+                //    string input = Console.ReadLine();
+                //    if(input == "y")
+                //    {
+                //        Rewind(Movie.CurrentTime);
+                //    }
+                //}
+            }
+        }
+        public override string ToString()
+        {
+            string output = base.ToString();
+            output += $"Scenes: {Scenes}\n";;
+            return output;
         }
     }
 }

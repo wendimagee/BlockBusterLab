@@ -16,41 +16,49 @@ namespace BlockBusterLab
         Propaganda,
         Animation
     }
-    class Movie
+    abstract class Movie
     {
 
-            public string Title { get; set; }
-            public int RunTime { get; set; }
-            public Genre Category { get; set; }
-            public List<string> Scenes { get; set; }
-        
+        public string Title { get; set; }
+        public int RunTime { get; set; }
+        public Genre Category { get; set; }
+        public List<string> Scenes { get; set; }
 
-            public Movie(string Title, int RunTime, Genre Category, List<string> Scenes)
-            {
-                this.Title = Title;
-                this.RunTime = RunTime;
-                this.Category = Category;
-                this.Scenes = Scenes;
-            }
 
-            public string PrintInfo(List<Movie> movies)
+        public Movie(string Title, int RunTime, Genre Category, List<string> Scenes)
+        {
+            this.Title = Title;
+            this.RunTime = RunTime;
+            this.Category = Category;
+            this.Scenes = Scenes;
+        }
+
+        public virtual void PrintInfo(Movie m, int index)
+        {
+               Console.WriteLine($"     Title: {m.Title}");
+               Console.WriteLine($"     Run Time: {m.RunTime} Minutes");
+               Console.WriteLine($"     Genre: {m.Category}");
+            
+            
+
+        }
+        public static void PrintScenes(List<string> Scenes)
+        {
+            foreach (string s in Scenes)
             {
-            string output = "";
-            foreach (Movie m in movies)
-            {
-                output += $"Title: {Title}\n";
-                output += $"Run Time: {RunTime} Minutes\n";
-                output += $"Genre: {Category}\n";
-            }
-                return output;
-                
-            }
-            public void PrintScenes(List<string> Scenes)
-            {
-                foreach (string s in Scenes)
-                {
                 Console.WriteLine($"    {Scenes.IndexOf(s) + 1}. {s}");
-                }
             }
         }
+        /*A virtual method called PrintInfo() that prints all properties in the class to the console save for the scenes.
+     */
+        public abstract void Play();
+        public override string ToString()
+        {
+            string output = "";
+            output += $"Title: {Title}\n";
+            output += $"Run Time: {RunTime} Minutes\n";
+            output += $"Genre: {Category}\n";
+            return output;
+        }
     }
+}
