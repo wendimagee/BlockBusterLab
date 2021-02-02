@@ -60,31 +60,32 @@ namespace BlockBusterLab
             }
             Console.WriteLine();
         }
-        public void Checkout(List<Movie> movies)
+        public void Checkout()
         {
             PrintMovies();
-            Console.WriteLine("Which movie would you like to checkout?");
+            Console.WriteLine("Please enter the number of your selection: ");
+            int index = int.Parse(Console.ReadLine());
+            //call the getmovie method to select a movie
+            Movie m = GetMovie(index - 1);
+            //print selected movies info
+            m.PrintInfo(m, (index - 1));
+            Console.WriteLine("Do you want to watch the movie? (y/n)");
             string input = Console.ReadLine();
-            int userChoice = Int32.Parse(input) - 1;
-            //check if userchoice is in index
-            //if (userChoice > Scenes.Count || userChoice < 0)
-            //    {
-            //        throw new IndexOutOfRangeException();
-            //    }
-            //    PrintInfo(movies[userChoice]);
+
+            //if (input == "y")
+            //{
+            //    Play();
+            //}
+            //else
+            //{
+            //    break;
+            //}
         }
             public Movie GetMovie(int index)
             {
                 return movies[index];
             }
-            // public virtual void PrintInfo(int userChoice)
-            //    {
-            //    for (int i = 0; i < movies.Count; i++)
-            //         {
-            //        if (m[] == userChoice)
-            //        {
-            //            Console.WriteLine($"   Title: {Title}\n    Run Time: {RunTime} Minutes\n   Genre: {Category}\n");
-            //        }
+    
             /*CheckOut() - this will call PrintMovies() and ask the user which movie they’d like to check out, 
              get an index from the user, select a movie from the list and PrintInfo() on that movie.
              The method should return the Movie object selected by the user.*/
