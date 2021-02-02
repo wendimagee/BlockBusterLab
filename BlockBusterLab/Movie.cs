@@ -49,8 +49,6 @@ namespace BlockBusterLab
                 Console.WriteLine($"    {Scenes.IndexOf(s) + 1}. {s}");
             }
         }
-        /*A virtual method called PrintInfo() that prints all properties in the class to the console save for the scenes.
-     */
         public abstract void Play();
         public override string ToString()
         {

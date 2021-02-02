@@ -60,7 +60,7 @@ namespace BlockBusterLab
             }
             Console.WriteLine();
         }
-        public void Checkout()
+        public Movie CheckOut()
         {
             PrintMovies();
             Console.WriteLine("Please enter the number of your selection: ");
@@ -69,26 +69,12 @@ namespace BlockBusterLab
             Movie m = GetMovie(index - 1);
             //print selected movies info
             m.PrintInfo(m, (index - 1));
-            Console.WriteLine("Do you want to watch the movie? (y/n)");
-            string input = Console.ReadLine();
-
-            //if (input == "y")
-            //{
-            //    Play();
-            //}
-            //else
-            //{
-            //    break;
-            //}
+            return m;
         }
-            public Movie GetMovie(int index)
+        public Movie GetMovie(int index)
             {
                 return movies[index];
             }
-    
-            /*CheckOut() - this will call PrintMovies() and ask the user which movie they’d like to check out, 
-             get an index from the user, select a movie from the list and PrintInfo() on that movie.
-             The method should return the Movie object selected by the user.*/
 
         
     }

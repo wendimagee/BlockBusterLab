@@ -18,34 +18,42 @@ namespace BlockBusterLab
                 //call a new blockbuster object in order to bring the movie list into existence
                 BlockBuster bB = new BlockBuster();
                 //list movies
-                bB.PrintMovies();
-                Console.WriteLine("Please enter the number of your selection: ");
-                
+                //bB.PrintMovies();
+                //Console.WriteLine("Please enter the number of your selection: ");
+                Movie n = bB.CheckOut();
+                Console.WriteLine("Do you want to watch the movie?(y/n)");
+                string input = Console.ReadLine().Trim().ToLower();
+                if(input == "y" || input =="yes")
+                {
+                    n.Play();
+                }
+               
 
                 //m.Play();
                 //^^the method is being called but no list is produced?
                 //I imagine the problem is in my overwriting of ToString but i still dont understand how/why
 
                 //bB.Checkout(movies);
+                try
+                {
+                    Console.WriteLine("\n\nWould you like to continue?(y/n)");
+                    char answer = char.Parse(Console.ReadLine());
+                    if (char.ToLower(answer) == 'y')
+                    {
+                        goAgain = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Have a nice day!");
+                        goAgain = false;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine(@"Please enter a ""y"" or an ""n"" ");
+                    Console.WriteLine();
+                }
 
-            }
-            try
-            {
-                Console.WriteLine("\n\nWould you like to continue?(y/n)");
-                char answer = char.Parse(Console.ReadLine());
-                if (char.ToLower(answer) == 'y')
-                {
-                    goAgain = true;
-                }
-                else
-                {
-                    goAgain = false;
-                }
-            }
-            catch
-            {
-                Console.WriteLine(@"Please enter a ""y"" or an ""n"" ");
-                Console.WriteLine();
             }
 
         }

@@ -31,13 +31,5 @@ namespace BlockBusterLab
             Console.WriteLine(Scenes[userChoice]);
 
         }
-        public override string ToString()
-        {
-            string output = base.ToString(); ;
-            output += $"Title: {Title}\n";
-           // output += $"Run Time: {RunTime} Minutes\n";
-            //output += $"Genre: {Category}\n";
-            return output;
-        }
     }
 }
