@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace BlockBusterLab
 {
@@ -40,6 +41,16 @@ namespace BlockBusterLab
                Console.WriteLine($"     Genre: {m.Category}");
             
             
+
+        }
+        public static void PlayWholeMovie(List<string> Scenes)
+        {
+            foreach (string s in Scenes)
+            {
+                Console.WriteLine(s);
+                Thread.Sleep(1000);
+
+            }
 
         }
         public static void PrintScenes(List<string> Scenes)
