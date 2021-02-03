@@ -20,9 +20,9 @@ namespace BlockBusterLab
             try
             {
                 Console.WriteLine("Now Playing: " + Title);
-                Console.WriteLine("What scene would you like to watch?" + (Scenes.Count + 1));
+                Console.WriteLine("What scene would you like to watch?");
                 PrintScenes(Scenes);
-                Console.WriteLine("Which scene would you like to watch?");
+                Console.WriteLine("Which scene would you like to watch?(0 - " + (Scenes.Count)+ ")");
                 string input = Console.ReadLine();
                 int userChoice = int.Parse(input) - 1;
                 //check if userchoice is in index
@@ -31,6 +31,12 @@ namespace BlockBusterLab
                     throw new IndexOutOfRangeException();
                 }
                 Console.WriteLine(Scenes[userChoice]);
+                Console.WriteLine("Would you like to watch another scene?");
+                string answer = Console.ReadLine().Trim().ToLower();
+                if(answer == "y")
+                {
+                    Play();
+                }
             }
             catch (IndexOutOfRangeException e)
             {
