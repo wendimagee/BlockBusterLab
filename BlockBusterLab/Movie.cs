@@ -51,7 +51,6 @@ namespace BlockBusterLab
                 Thread.Sleep(1000);
 
             }
-
         }
         public static void PrintScenes(List<string> Scenes)
         {
