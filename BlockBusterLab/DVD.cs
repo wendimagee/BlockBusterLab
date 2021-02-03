@@ -29,7 +29,7 @@ namespace BlockBusterLab
                 {
                     Console.WriteLine("What scene would you like to watch?");
                     PrintScenes(Scenes);
-                    Console.WriteLine("Which scene would you like to watch?(0 - " + (Scenes.Count) + ")");
+                    Console.WriteLine("Which scene would you like to watch?(1 - " + (Scenes.Count) + ")");
                     string input = Console.ReadLine();
                     int userChoice = int.Parse(input) - 1;
                     //check if userchoice is in index

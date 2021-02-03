@@ -46,12 +46,7 @@ namespace BlockBusterLab
                 string watchAgain = Console.ReadLine().ToLower().Trim();
                 if (watchAgain == "y" || watchAgain == "yes")
                 {
-                    foreach (string s in Scenes)
-                    {
-                        Console.WriteLine(s);
-                        Thread.Sleep(1000);
-
-                    }
+                    PlayWholeMovie(Scenes);
                 }
             }
             else
