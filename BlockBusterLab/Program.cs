@@ -17,9 +17,6 @@ namespace BlockBusterLab
                 Console.WriteLine("Please select a movie from the list\n");
                 //call a new blockbuster object in order to bring the movie list into existence
                 BlockBuster bB = new BlockBuster();
-                //list movies
-                //bB.PrintMovies();
-                //Console.WriteLine("Please enter the number of your selection: ");
                 Movie n = bB.CheckOut();
                 Console.WriteLine("Do you want to watch the movie?(y/n)");
                 string input = Console.ReadLine().Trim().ToLower();
@@ -27,13 +24,6 @@ namespace BlockBusterLab
                 {
                     n.Play();
                 }
-               
-
-                //m.Play();
-                //^^the method is being called but no list is produced?
-                //I imagine the problem is in my overwriting of ToString but i still dont understand how/why
-
-                //bB.Checkout(movies);
                 try
                 {
                     Console.WriteLine("\n\nWould you like to continue?(y/n)");

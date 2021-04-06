@@ -12,7 +12,6 @@ namespace BlockBusterLab
         {
             this.CurrentTime = CurrentTime;
         }
-
         public static void Rewind(int CurrentTime)
         {
             CurrentTime = 0;

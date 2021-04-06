@@ -39,9 +39,6 @@ namespace BlockBusterLab
                Console.WriteLine($"     Title: {m.Title}");
                Console.WriteLine($"     Run Time: {m.RunTime} Minutes");
                Console.WriteLine($"     Genre: {m.Category}");
-            
-            
-
         }
         public static void PlayWholeMovie(List<string> Scenes)
         {
@@ -49,7 +46,6 @@ namespace BlockBusterLab
             {
                 Console.WriteLine(s);
                 Thread.Sleep(1000);
-
             }
         }
         public static void PrintScenes(List<string> Scenes)
